@@ -1,6 +1,6 @@
-.bak
-.txt
-.rpt
+*.bak
+*.txt
+*.rpt
 db
 output_files
 simulation
