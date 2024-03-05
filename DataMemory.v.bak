@@ -1,0 +1,51 @@
+module DataMemory(input [31:0] addr, input [31:0] data, input [0:0] MemWrite, input [0:0] MemRead, output reg [31:0] out, input wire [0:0] extendMSB, input wire [1:0] loadType);
+	reg [31:0] mem [31:0];//256 ram 
+	always@(*) begin
+		if(MemRead == 1'b1) begin
+			case(loadType)
+				default: out = mem[addr]; //load word
+				2'b01: out = {{16{(extendMSB == 1'b1) ? mem[addr][15] : 0}}, mem[addr][15:0]}; //half word
+				2'b10: out = {{24{(extendMSB == 1'b1) ? mem[addr][7] : 0}}, mem[addr][7:0]}; //qword (byte)
+			endcase
+		end else begin
+			out = 32'd0;
+		end
+		if(MemWrite == 1'b1) mem[addr] = data; 
+	end
+	
+	//better way to do it?
+	initial begin
+		mem[0] = 32'd0;
+		mem[1] = 32'd0;
+		mem[2] = 32'd0;
+		mem[3] = 32'd0;
+		mem[4] = 32'd0;
+		mem[5] = 32'd0;
+		mem[6] = 32'd0;
+		mem[7] = 32'd0;
+		mem[8] = 32'd0;
+		mem[9] = 32'd0;
+		mem[10] = 32'd0;
+		mem[11] = 32'd0;
+		mem[12] = 32'd0;
+		mem[13] = 32'd0;
+		mem[14] = 32'd0;
+		mem[15] = 32'd0;
+		mem[16] = 32'd0;
+		mem[17] = 32'd0;
+		mem[18] = 32'd0;
+		mem[19] = 32'd0;
+		mem[20] = 32'd0;
+		mem[21] = 32'd0;
+		mem[22] = 32'd0;
+		mem[23] = 32'd0;
+		mem[24] = 32'd0;
+		mem[25] = 32'd0;
+		mem[26] = 32'd0;
+		mem[27] = 32'd0;
+		mem[28] = 32'd0;
+		mem[29] = 32'd0;
+		mem[30] = 32'd0;
+		mem[31] = 32'd0;
+	end
+endmodule

@@ -1,0 +1,113 @@
+module RV32I(input wire clk);
+	//core
+	wire [31:0] RV32I_Instruction;
+	wire [31:0] RV32I_Immediate;
+	
+	//control signals
+	wire [0:0] RV32I_Control_Branch;
+	wire [0:0] RV32I_Control_MemRead;
+	wire [0:0] RV32I_Control_MemtoReg;
+	wire [0:0] RV32I_Control_MemWrite;
+	wire [0:0] RV32I_Control_ALUSrc;
+	wire [0:0] RV32I_Control_RegWrite;
+	wire [2:0] RV32I_Control_ALUOp;
+	wire [1:0] RV32I_Control_loadType;
+	wire [0:0] RV32I_Control_extendMSB;
+	
+	//register file
+	wire [31:0] RV32I_Reg_WriteData; 
+	wire [31:0] RV32I_Reg_ReadData1;
+	wire [31:0] RV32I_Reg_ReadData2;
+	
+	//ALU
+	wire [31:0] RV32I_ALU_Input;
+	wire [0:0] RV32I_ALU_Zero;
+	wire [31:0] RV32I_ALU_Result;
+	wire [2:0] RV32I_ALU_Compare;
+	
+	//Data Memory
+	wire [31:0] RV32I_Mem_Data;
+	
+	//PC
+	wire [31:0] RV32I_PC_NEW;
+	reg [31:0] RV32I_PC = 32'd0;
+	
+	//Branch Logic
+	wire [0:0] RV32I_BranchLogic_Choice;
+	
+	InstructionMemory RV32I_InstructionMemory(.addr(RV32I_PC), .data(RV32I_Instruction));
+	
+	Control RV32I_Control(	.opcode(RV32I_Instruction[6:0]), 
+									.funct3(RV32I_Instruction[14:12]), 
+									.funct7(RV32I_Instruction[31:25]), 
+									.Branch(RV32I_Control_Branch), 
+									.MemRead(RV32I_Control_MemRead), 
+									.MemtoReg(RV32I_Control_MemtoReg), 
+									.ALUOp(RV32I_Control_ALUOp), 
+									.MemWrite(RV32I_Control_MemWrite), 
+									.ALUSrc(RV32I_Control_ALUSrc), 
+									.RegWrite(RV32I_Control_RegWrite),
+									.extendMSB(RV32I_Control_extendMSB),
+									.loadType(RV32I_Control_loadType));
+									
+	Registers RV32I_Registers(	.clk(clk),
+										.read1(RV32I_Instruction[19:15]), 
+										.read2(RV32I_Instruction[24:20]), 
+										.write(RV32I_Instruction[11:7]), 
+										.write_data(RV32I_Reg_WriteData), 
+										.out1(RV32I_Reg_ReadData1), 
+										.out2(RV32I_Reg_ReadData2), 
+										.RegWrite(RV32I_Control_RegWrite));
+										
+	ImmGen RV32I_ImmGen(	.code(RV32I_Instruction), 
+								.value(RV32I_Immediate));
+								
+	Mux2 RV32I_ALUMux(.A(RV32I_Reg_ReadData2), 
+							.B(RV32I_Immediate), 
+							.select(RV32I_Control_ALUSrc), 
+							.Out(RV32I_ALU_Input));
+
+	ALU2 RV32I_ALU(.A(RV32I_Reg_ReadData1), 
+						.B(RV32I_ALU_Input), 
+						.ALUControl(RV32I_Control_ALUOp),  
+						.Result(RV32I_ALU_Result), 
+						.compare(RV32I_ALU_Compare));
+	
+	Mux2 RV32I_WritebackMux(.B(RV32I_Mem_Data), 
+									.A(RV32I_ALU_Result), 
+									.select(RV32I_Control_MemtoReg), 
+									.Out(RV32I_Reg_WriteData));
+									
+	DataMemory RV32I_DataMemory(	.addr(RV32I_ALU_Result), 
+											.data(RV32I_Reg_ReadData2), 
+											.MemRead(RV32I_Control_MemRead), 
+											.MemWrite(RV32I_Control_MemWrite), 
+											.out(RV32I_Mem_Data),
+											.extendMSB(RV32I_Control_extendMSB),
+											.loadType(RV32I_Control_loadType));
+	
+	Mux2 RV32I_PCMux(	.A(RV32I_PC + 32'd4), 
+							.B(RV32I_PC + RV32I_Immediate), 
+							.select(RV32I_Control_Branch & RV32I_BranchLogic_Choice), 
+							.Out(RV32I_PC_NEW));
+							
+	BranchLogic RV32I_BranchLogic(.lt(RV32I_ALU_Compare[2]), 
+											.eq(RV32I_ALU_Compare[1]), 
+											.gt(RV32I_ALU_Compare[0]),
+											.funct3(RV32I_Instruction[14:12]),
+											.choice(RV32I_BranchLogic_Choice));
+	
+	always@(posedge clk) begin
+		RV32I_PC <= RV32I_PC_NEW;
+	end
+endmodule
+
+
+/*
+Branch prediction:
+-BNE often taken
+-running log of prev decisions
+alternative idea:
+-keep a saturating counter, T inc, N dec...
+
+*/

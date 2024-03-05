@@ -1,0 +1,89 @@
+module Control(input wire [6:0] opcode, input wire [2:0] funct3, input wire [6:0] funct7, output wire Branch, output wire MemRead, output wire MemtoReg, output wire [2:0] ALUOp, output wire MemWrite, output wire ALUSrc, output wire RegWrite);
+	//this table follows the one on the RISCV_CARD.pdf reference
+	parameter OP_ADD = 	{7'b0110011, 3'h0, 7'h00};
+	parameter OP_SUB = 	{7'b0110011, 3'h0, 7'h20};
+	parameter OP_XOR =	{7'b0110011, 3'h4, 7'h00};
+	parameter OP_OR =		{7'b0110011, 3'h6, 7'h00};
+	parameter OP_AND =	{7'b0110011, 3'h7, 7'h00};
+	parameter OP_SLL =	{7'b0110011, 3'h1, 7'h00};
+	parameter OP_SRL =	{7'b0110011, 3'h5, 7'h00};
+	parameter OP_SRA =	{7'b0110011, 3'h5, 7'h20};
+	parameter OP_SLT =	{7'b0110011, 3'h2, 7'h00}; 
+	parameter OP_SLTU =	{7'b0110011, 3'h0, 7'h00};
+	parameter OP_ADDI =	{7'b0010011, 3'h0, 7'hxx};
+	parameter OP_XORI =	{7'b0010011, 3'h4, 7'hxx};
+	parameter OP_ORI =	{7'b0010011, 3'h6, 7'hxx};
+	parameter OP_ANDI =	{7'b0010011, 3'h7, 7'hxx};
+	parameter OP_SLLI =	{7'b0010011, 3'h1, 7'h00};
+	parameter OP_SRLI =	{7'b0010011, 3'h5, 7'h00};
+	parameter OP_SRAI =	{7'b0010011, 3'h5, 7'h20};
+	parameter OP_SLTI =	{7'b0010011, 3'h2, 7'hxx};
+	parameter OP_SLTIU =	{7'b0010011, 3'h3, 7'hxx};
+	parameter OP_LB = 	{7'b0000011, 3'h0, 7'hxx};
+	parameter OP_LH = 	{7'b0000011, 3'h1, 7'hxx};
+	parameter OP_LW = 	{7'b0000011, 3'h2, 7'hxx};
+	parameter OP_LBU = 	{7'b0000011, 3'h4, 7'hxx};
+	parameter OP_LHU = 	{7'b0000011, 3'h5, 7'hxx};
+	parameter OP_SB = 	{7'b0100011, 3'h0, 7'hxx};
+	parameter OP_SH = 	{7'b0100011, 3'h1, 7'hxx};
+	parameter OP_SW = 	{7'b0100011, 3'h2, 7'hxx};
+	parameter OP_BEQ = 	{7'b1100011, 3'h0, 7'hxx};
+	parameter OP_BNE = 	{7'b1100011, 3'h1, 7'hxx};
+	parameter OP_BLT = 	{7'b1100011, 3'h4, 7'hxx};
+	parameter OP_BGE = 	{7'b1100011, 3'h5, 7'hxx};
+	parameter OP_BLTU = 	{7'b1100011, 3'h6, 7'hxx};
+	parameter OP_BGEU = 	{7'b1000011, 3'h7, 7'hxx};
+	parameter OP_JAL = 	{7'b1101111, 3'hx, 7'hxx};
+	parameter OP_JALR = 	{7'b1100111, 3'h0, 7'hxx};
+	parameter OP_LUI = 	{7'b0110111, 3'hx, 7'hxx};
+	parameter OP_AUIPC = {7'b0010111, 3'hx, 7'hxx};
+
+	
+	reg [11:0] CBUS = 12'd0;
+	wire [2:0] unsupported;
+	
+	assign {Branch, MemRead, MemtoReg, ALUOp, MemWrite, ALUSrc, RegWrite, unsupported} = CBUS;
+	
+	always@(*) begin
+		casex({opcode, funct3, funct7})
+			OP_ADD:		CBUS = {1'b0, 1'b0, 1'b1, 3'b000, 1'b0, 1'b0, 1'b1, 2'b00, 1'b0};
+			OP_SUB:		CBUS = {1'b0, 1'b0, 1'b1, 3'b001, 1'b0, 1'b0, 1'b1, 2'b00, 1'b0};
+			OP_XOR:		CBUS = {1'b0, 1'b0, 1'b1, 3'b100, 1'b0, 1'b0, 1'b1, 2'b00, 1'b0};
+			OP_OR:		CBUS = {1'b0, 1'b0, 1'b1, 3'b011, 1'b0, 1'b0, 1'b1, 2'b00, 1'b0};
+			OP_AND:		CBUS = {1'b0, 1'b0, 1'b1, 3'b010, 1'b0, 1'b0, 1'b1, 2'b00, 1'b0};
+			OP_SLL:		CBUS = {1'b0, 1'b0, 1'b1, 3'b101, 1'b0, 1'b0, 1'b1, 2'b00, 1'b0};
+			OP_SRL:		CBUS = {1'b0, 1'b0, 1'b1, 3'b110, 1'b0, 1'b0, 1'b1, 2'b00, 1'b0};
+			OP_SRA:		CBUS = {1'b0, 1'b0, 1'b1, 3'b111, 1'b0, 1'b0, 1'b1, 2'b00, 1'b0};
+			//OP_SLT:		CBUS = 
+			//OP_SLTU:		CBUS = 
+			OP_ADDI:		CBUS = {1'b0, 1'b0, 1'b0, 3'b000, 1'b0, 1'b1, 1'b1, 2'b00, 1'b0};
+			OP_XORI:		CBUS = {1'b0, 1'b0, 1'b0, 3'b100, 1'b0, 1'b1, 1'b1, 2'b00, 1'b0};
+			OP_ORI:		CBUS = {1'b0, 1'b0, 1'b0, 3'b011, 1'b0, 1'b1, 1'b1, 2'b00, 1'b0};
+			OP_ANDI:		CBUS = {1'b0, 1'b0, 1'b0, 3'b010, 1'b0, 1'b1, 1'b1, 2'b00, 1'b0};
+			OP_SLLI: 	CBUS = {1'b0, 1'b0, 1'b0, 3'b101, 1'b0, 1'b1, 1'b1, 2'b00, 1'b0};
+			OP_SRLI:		CBUS = {1'b0, 1'b0, 1'b0, 3'b110, 1'b0, 1'b1, 1'b1, 2'b00, 1'b0};
+			OP_SRAI:		CBUS = {1'b0, 1'b0, 1'b0, 3'b111, 1'b0, 1'b1, 1'b1, 2'b00, 1'b0};
+			//OP_SLTI:		CBUS = 
+			//OP_SLTIU:	CBUS = 
+			OP_LB:		CBUS = {1'b0, 1'b1, 1'b1, 3'b000, 1'b0, 1'b1, 1'b1, 2'b10, 1'b1};
+			OP_LH:		CBUS = {1'b0, 1'b1, 1'b1, 3'b000, 1'b0, 1'b1, 1'b1, 2'b01, 1'b1};
+			OP_LW:		CBUS = {1'b0, 1'b1, 1'b1, 3'b000, 1'b0, 1'b1, 1'b1, 2'b00, 1'b0};
+			OP_LBU:		CBUS = {1'b0, 1'b1, 1'b1, 3'b000, 1'b0, 1'b1, 1'b1, 2'b10, 1'b0};
+			OP_LHU:		CBUS = {1'b0, 1'b1, 1'b1, 3'b000, 1'b0, 1'b1, 1'b1, 2'b01, 1'b0};
+			//OP_SB:		CBUS = 
+			//OP_SH:		CBUS = 
+			OP_SW:		CBUS = {1'b0, 1'b0, 1'b0, 3'b000, 1'b1, 1'b1, 1'b0, 2'b00, 1'b0};
+			OP_BEQ:		CBUS = {1'b1, 1'b0, 1'b0, 3'b000, 1'b0, 1'b0, 1'b0, 2'b00, 1'b0};
+			OP_BNE:		CBUS = {1'b1, 1'b0, 1'b0, 3'b000, 1'b0, 1'b0, 1'b0, 2'b00, 1'b0};
+			OP_BLT:		CBUS = {1'b1, 1'b0, 1'b0, 3'b000, 1'b0, 1'b0, 1'b0, 2'b00, 1'b0};
+			OP_BGE:		CBUS = {1'b1, 1'b0, 1'b0, 3'b000, 1'b0, 1'b0, 1'b0, 2'b00, 1'b0};
+			OP_BLTU:		CBUS = {1'b1, 1'b0, 1'b0, 3'b000, 1'b0, 1'b0, 1'b0, 2'b00, 1'b0};
+			OP_BGEU:		CBUS = {1'b1, 1'b0, 1'b0, 3'b000, 1'b0, 1'b0, 1'b0, 2'b00, 1'b0};
+			//OP_JAL:		CBUS = 
+			//OP_JALR:		CBUS = 
+			OP_LUI:		CBUS = {1'b0, 1'b0, 1'b0, 3'b000, 1'b0, 1'b1, 1'b1, 2'b00, 1'b0};
+			//OP_AUIPC: 	CBUS = {1'b1, 1'b0, 1'b0, 3'b000, 1'b0, 1'b0, 1'b0, 2'b00, 1'b0};
+			default: 	CBUS = {1'b0, 1'b0, 1'b0, 3'b000, 1'b0, 1'b0, 1'b0, 2'b00, 1'b0};
+		endcase
+	end
+endmodule

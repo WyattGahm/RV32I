@@ -1,0 +1,260 @@
+# Reading pref.tcl
+# do RV32IPipelined_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined {C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:42:40 on Mar 04,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined" C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I.v 
+# -- Compiling module RV32I
+# 
+# Top level modules:
+# 	RV32I
+# End time: 14:42:40 on Mar 04,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined {C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Registers.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:42:40 on Mar 04,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined" C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Registers.v 
+# -- Compiling module Registers
+# 
+# Top level modules:
+# 	Registers
+# End time: 14:42:41 on Mar 04,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined {C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Mux2.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:42:41 on Mar 04,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined" C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Mux2.v 
+# -- Compiling module Mux2
+# 
+# Top level modules:
+# 	Mux2
+# End time: 14:42:41 on Mar 04,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined {C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/InstructionMemory.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:42:41 on Mar 04,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined" C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/InstructionMemory.v 
+# -- Compiling module InstructionMemory
+# 
+# Top level modules:
+# 	InstructionMemory
+# End time: 14:42:41 on Mar 04,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined {C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/ImmGen.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:42:41 on Mar 04,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined" C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/ImmGen.v 
+# -- Compiling module ImmGen
+# 
+# Top level modules:
+# 	ImmGen
+# End time: 14:42:41 on Mar 04,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined {C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/DataMemory.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:42:41 on Mar 04,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined" C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/DataMemory.v 
+# -- Compiling module DataMemory
+# ** Warning: C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/DataMemory.v(5): (vlog-2182) 'mem' might be read before written in always_comb or always @* block.
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 14:42:41 on Mar 04,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vlog -vlog01compat -work work +incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined {C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Control.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:42:41 on Mar 04,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined" C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Control.v 
+# -- Compiling module Control
+# 
+# Top level modules:
+# 	Control
+# End time: 14:42:41 on Mar 04,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined {C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/BranchLogic.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:42:41 on Mar 04,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined" C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/BranchLogic.v 
+# -- Compiling module BranchLogic
+# 
+# Top level modules:
+# 	BranchLogic
+# End time: 14:42:41 on Mar 04,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined {C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/ALU2.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:42:41 on Mar 04,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined" C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/ALU2.v 
+# -- Compiling module ALU2
+# 
+# Top level modules:
+# 	ALU2
+# End time: 14:42:41 on Mar 04,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined {C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_IF.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:42:41 on Mar 04,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined" C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_IF.v 
+# -- Compiling module RV32I_IF
+# 
+# Top level modules:
+# 	RV32I_IF
+# End time: 14:42:41 on Mar 04,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined {C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_EX.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:42:41 on Mar 04,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined" C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_EX.v 
+# -- Compiling module RV32I_EX
+# 
+# Top level modules:
+# 	RV32I_EX
+# End time: 14:42:41 on Mar 04,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined {C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_MEM.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:42:41 on Mar 04,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined" C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_MEM.v 
+# -- Compiling module RV32I_MEM
+# 
+# Top level modules:
+# 	RV32I_MEM
+# End time: 14:42:41 on Mar 04,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined {C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_WB.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:42:41 on Mar 04,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined" C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_WB.v 
+# -- Compiling module RV32I_WB
+# 
+# Top level modules:
+# 	RV32I_WB
+# End time: 14:42:41 on Mar 04,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined {C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_ID.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:42:41 on Mar 04,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined" C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_ID.v 
+# -- Compiling module RV32I_ID
+# 
+# Top level modules:
+# 	RV32I_ID
+# End time: 14:42:41 on Mar 04,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined {C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32IPipelined.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:42:41 on Mar 04,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined" C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32IPipelined.v 
+# -- Compiling module RV32IPipelined
+# 
+# Top level modules:
+# 	RV32IPipelined
+# End time: 14:42:41 on Mar 04,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined {C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Forwarder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:42:41 on Mar 04,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined" C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Forwarder.v 
+# -- Compiling module Forwarder
+# 
+# Top level modules:
+# 	Forwarder
+# End time: 14:42:42 on Mar 04,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined {C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Mux4.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:42:42 on Mar 04,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined" C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Mux4.v 
+# -- Compiling module Mux4
+# 
+# Top level modules:
+# 	Mux4
+# End time: 14:42:42 on Mar 04,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.RV32IPipelined
+# vsim work.RV32IPipelined 
+# Start time: 14:42:51 on Mar 04,2024
+# Loading work.RV32IPipelined
+# Loading work.RV32I
+# Loading work.RV32I_IF
+# Loading work.InstructionMemory
+# Loading work.Mux2
+# Loading work.RV32I_ID
+# Loading work.Registers
+# Loading work.ImmGen
+# Loading work.Control
+# Loading work.RV32I_EX
+# Loading work.Mux4
+# Loading work.ALU2
+# Loading work.RV32I_MEM
+# Loading work.DataMemory
+# Loading work.BranchLogic
+# Loading work.RV32I_WB
+# Loading work.Forwarder
+add wave -position end  sim:/RV32IPipelined/DUT/clk
+add wave -position end  sim:/RV32IPipelined/DUT/stall
+add wave -position end  sim:/RV32IPipelined/DUT/IF_PC_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/IF_INST_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/ID_PC_IN
+add wave -position end  sim:/RV32IPipelined/DUT/ID_INST_IN
+add wave -position end  sim:/RV32IPipelined/DUT/ID_CTRL_WB_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/ID_CTRL_MEM_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/ID_CTRL_EX_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/ID_PC_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/ID_REG1_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/ID_REG2_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/ID_IMM_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/ID_INST_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/EX_CTRL_WB_IN
+add wave -position end  sim:/RV32IPipelined/DUT/EX_CTRL_MEM_IN
+add wave -position end  sim:/RV32IPipelined/DUT/EX_CTRL_EX_IN
+add wave -position end  sim:/RV32IPipelined/DUT/EX_PC_IN
+add wave -position end  sim:/RV32IPipelined/DUT/EX_REG1_IN
+add wave -position end  sim:/RV32IPipelined/DUT/EX_REG2_IN
+add wave -position end  sim:/RV32IPipelined/DUT/EX_IMM_IN
+add wave -position end  sim:/RV32IPipelined/DUT/EX_INST_IN
+add wave -position end  sim:/RV32IPipelined/DUT/EX_CTRL_WB_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/EX_CTRL_MEM_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/EX_PCIMM_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/EX_COMPARE_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/EX_ALURESULT_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/EX_REG2_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/EX_INST_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/MEM_CTRL_WB_IN
+add wave -position end  sim:/RV32IPipelined/DUT/MEM_CTRL_MEM_IN
+add wave -position end  sim:/RV32IPipelined/DUT/MEM_PCIMM_IN
+add wave -position end  sim:/RV32IPipelined/DUT/MEM_COMPARE_IN
+add wave -position end  sim:/RV32IPipelined/DUT/MEM_ALURESULT_IN
+add wave -position end  sim:/RV32IPipelined/DUT/MEM_REG2_IN
+add wave -position end  sim:/RV32IPipelined/DUT/MEM_INST_IN
+add wave -position end  sim:/RV32IPipelined/DUT/MEM_CTRL_WB_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/MEM_DATA_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/MEM_ALURESULT_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/MEM_INST_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/MEM_PCIMM_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/MEM_PCSRC_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/WB_CTRL_WB_IN
+add wave -position end  sim:/RV32IPipelined/DUT/WB_MEM_DATA_IN
+add wave -position end  sim:/RV32IPipelined/DUT/WB_ALURESULT_IN
+add wave -position end  sim:/RV32IPipelined/DUT/WB_INST_IN
+add wave -position end  sim:/RV32IPipelined/DUT/WB_CTRL_RegWrite_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/WB_INST_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/WB_DATA_OUT
+add wave -position end  sim:/RV32IPipelined/DUT/FWD_A_SELECT
+add wave -position end  sim:/RV32IPipelined/DUT/FWD_B_SELECT
+add wave -position end  sim:/RV32IPipelined/DUT/InstructionDecode/RV32I_Registers/registers[28]
+add wave -position 51  sim:/RV32IPipelined/DUT/InstructionDecode/RV32I_Registers/registers[29]
+run 200
+# End time: 14:54:10 on Mar 04,2024, Elapsed time: 0:11:19
+# Errors: 0, Warnings: 0

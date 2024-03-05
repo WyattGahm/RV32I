@@ -1,0 +1,436 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/wyatt/Desktop/RISCV/RV32IPipelined/simulation/modelsim
+vALU2
+Z1 !s110 1709581361
+!i10b 1
+!s100 0;Bj`V5dC3f5;lmMbof822
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I<L`^Ph1ZJ62UCITSdogo^3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1708541992
+8C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/ALU2.v
+FC:/Users/wyatt/Desktop/RISCV/RV32IPipelined/ALU2.v
+!i122 8
+Z4 L0 1 19
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1709581361.000000
+!s107 C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/ALU2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined|C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/ALU2.v|
+!i113 1
+Z7 o-vlog01compat -work work
+Z8 !s92 -vlog01compat -work work +incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined
+Z9 tCvgOpt 0
+n@a@l@u2
+vBranchLogic
+R1
+!i10b 1
+!s100 ?dA7We>WHMV_CMESQ`h9e3
+R2
+IaGiSQdD9_d@jbe9_9Tc_@3
+R3
+R0
+w1708528822
+8C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/BranchLogic.v
+FC:/Users/wyatt/Desktop/RISCV/RV32IPipelined/BranchLogic.v
+!i122 7
+L0 1 13
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/BranchLogic.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined|C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/BranchLogic.v|
+!i113 1
+R7
+R8
+R9
+n@branch@logic
+vControl
+R1
+!i10b 1
+!s100 10CeI3?2LdboV[U;dYIYN0
+R2
+IA:0bo_5DL?HjAbg^:<76P0
+R3
+R0
+w1708911575
+8C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Control.v
+FC:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Control.v
+!i122 6
+L0 1 89
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Control.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined|C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Control.v|
+!i113 1
+R7
+R8
+R9
+n@control
+vDataMemory
+R1
+!i10b 1
+!s100 h35golS_5zkdHQfU<zD043
+R2
+I4l45h6n[gUeDEd_oSgRAg3
+R3
+R0
+w1708630982
+8C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/DataMemory.v
+FC:/Users/wyatt/Desktop/RISCV/RV32IPipelined/DataMemory.v
+!i122 5
+L0 1 47
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/DataMemory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined|C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/DataMemory.v|
+!i113 1
+R7
+R8
+R9
+n@data@memory
+vForwarder
+Z10 !s110 1709581362
+!i10b 1
+!s100 26HS=Sh]j]bFk^o<m3ez30
+R2
+I1SL3A46Kgh=ENYXJf3j?l1
+R3
+R0
+w1708887099
+8C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Forwarder.v
+FC:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Forwarder.v
+!i122 15
+L0 1 67
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Forwarder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined|C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Forwarder.v|
+!i113 1
+R7
+R8
+R9
+n@forwarder
+vImmGen
+R1
+!i10b 1
+!s100 @^5>RYbY6=gN0;^Ah89b12
+R2
+I[9>kBTaH@dR67aaW0iIMk1
+R3
+R0
+w1708900822
+8C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/ImmGen.v
+FC:/Users/wyatt/Desktop/RISCV/RV32IPipelined/ImmGen.v
+!i122 4
+L0 1 38
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/ImmGen.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined|C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/ImmGen.v|
+!i113 1
+R7
+R8
+R9
+n@imm@gen
+vInstructionMemory
+R1
+!i10b 1
+!s100 XBIoZFRoi@fO:eY[@VIV[3
+R2
+IOJ<0Ie7L<V7cC?InIjh>Z3
+R3
+R0
+w1709581150
+8C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/InstructionMemory.v
+FC:/Users/wyatt/Desktop/RISCV/RV32IPipelined/InstructionMemory.v
+!i122 3
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/InstructionMemory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined|C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/InstructionMemory.v|
+!i113 1
+R7
+R8
+R9
+n@instruction@memory
+vMux2
+R1
+!i10b 1
+!s100 fZA0RmbIL<j<YVZekbz:?1
+R2
+Ii[B?B7Ql;oV94OMNCVWjJ3
+R3
+R0
+w1708376870
+8C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Mux2.v
+FC:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Mux2.v
+!i122 2
+L0 1 3
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Mux2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined|C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Mux2.v|
+!i113 1
+R7
+R8
+R9
+n@mux2
+vMux4
+R10
+!i10b 1
+!s100 bH5igMzGkkCi_SQJ1m5bK1
+R2
+IdYeEMIL=l7OU>Hi]h^f^63
+R3
+R0
+w1708818905
+8C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Mux4.v
+FC:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Mux4.v
+!i122 16
+L0 1 12
+R5
+r1
+!s85 0
+31
+!s108 1709581362.000000
+!s107 C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Mux4.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined|C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Mux4.v|
+!i113 1
+R7
+R8
+R9
+n@mux4
+vRegisters
+R1
+!i10b 1
+!s100 PCV:n?kmf4cN5H5ao6[UC3
+R2
+IXHI]Rc?4EXD[_Gge>4h>A1
+R3
+R0
+w1708632404
+8C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Registers.v
+FC:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Registers.v
+!i122 1
+L0 1 48
+R5
+r1
+!s85 0
+31
+Z11 !s108 1709581360.000000
+!s107 C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Registers.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined|C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/Registers.v|
+!i113 1
+R7
+R8
+R9
+n@registers
+vRV32I
+!s110 1709581360
+!i10b 1
+!s100 :kAbBj7NJ7K3alhV6zM`X2
+R2
+IblR^[HgMKA`km;?gjoR4C1
+R3
+R0
+w1708874264
+8C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I.v
+FC:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I.v
+!i122 0
+L0 1 163
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined|C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I.v|
+!i113 1
+R7
+R8
+R9
+n@r@v32@i
+vRV32I_EX
+R1
+!i10b 1
+!s100 41iGN_][N;f:IBc5D[NWA1
+R2
+IFG[5mR4JA1eT[L@MELP=A1
+R3
+R0
+w1708874833
+8C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_EX.v
+FC:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_EX.v
+!i122 10
+L0 1 16
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_EX.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined|C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_EX.v|
+!i113 1
+R7
+R8
+R9
+n@r@v32@i_@e@x
+vRV32I_ID
+R1
+!i10b 1
+!s100 TI6XXWnkanH3TRDFX=ERO0
+R2
+IQmQf4M[?ET``C3X4:T@HI0
+R3
+R0
+w1708634192
+8C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_ID.v
+FC:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_ID.v
+!i122 13
+L0 1 40
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_ID.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined|C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_ID.v|
+!i113 1
+R7
+R8
+R9
+n@r@v32@i_@i@d
+vRV32I_IF
+R1
+!i10b 1
+!s100 K5SHZF:le@R1cW_SQDP_C3
+R2
+IcU6WhX5TBY`CT:VhS2C5z0
+R3
+R0
+w1708634060
+8C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_IF.v
+FC:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_IF.v
+!i122 9
+L0 1 10
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_IF.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined|C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_IF.v|
+!i113 1
+R7
+R8
+R9
+n@r@v32@i_@i@f
+vRV32I_MEM
+R1
+!i10b 1
+!s100 YFD^o5Q1f5b0E6j6^N<i42
+R2
+I2O82eBY=NZ8BT4:[hVhJe0
+R3
+R0
+w1708632921
+8C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_MEM.v
+FC:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_MEM.v
+!i122 11
+L0 1 20
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_MEM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined|C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_MEM.v|
+!i113 1
+R7
+R8
+R9
+n@r@v32@i_@m@e@m
+vRV32I_WB
+R1
+!i10b 1
+!s100 d6P60cWdnXBceb=zk4XWa3
+R2
+ImW;L48`IJT]<7X^eU1hTX0
+R3
+R0
+w1708633206
+8C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_WB.v
+FC:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_WB.v
+!i122 12
+Z12 L0 1 6
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_WB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined|C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32I_WB.v|
+!i113 1
+R7
+R8
+R9
+n@r@v32@i_@w@b
+vRV32IPipelined
+R1
+!i10b 1
+!s100 C=;O5lPe`8VRMz8=[8@KD3
+R2
+IoZdLPgo=e?]N6XB=V8eki0
+R3
+R0
+w1708633501
+8C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32IPipelined.v
+FC:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32IPipelined.v
+!i122 14
+R12
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32IPipelined.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/wyatt/Desktop/RISCV/RV32IPipelined|C:/Users/wyatt/Desktop/RISCV/RV32IPipelined/RV32IPipelined.v|
+!i113 1
+R7
+R8
+R9
+n@r@v32@i@pipelined

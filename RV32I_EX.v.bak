@@ -1,0 +1,29 @@
+module RV32I_EX(input CTRL_WB_IN, input CTRL_M_IN, input CTRL_EX_IN, input PC_IN, input REG1_IN, input REG2_IN, input IMM_IN, input RD_IN, output CTRL_WB_OUT, output CTRL_M_OUT, output PCIMM_OUT, output COMPARE, output ALURESULT, output REG2_OUT, output RD_OUT);
+	/*
+	input CTRL_WB_IN, 
+	input CTRL_M_IN, 
+	input CTRL_EX_IN {aluop, alusrc}, 
+	input PC_IN, 
+	input REG1_IN, 
+	input REG2_IN, 
+	input IMM_IN, 
+	input RD_IN, 
+	output CTRL_WB_OUT, 
+	output CTRL_M_OUT, 
+	output PCIMM_OUT, 
+	output COMPARE, 
+	output ALURESULT, 
+	output REG2_OUT, 
+	output RD_OUT
+	*/
+	
+	wire [31:0] IM_ALU;
+	
+	Mux2 RV32I_ALUMux(.A(REG2_IN), .B(IMM_IN), .select(CTRL_EX_IN[0]), .Out(IM_ALU));
+	
+	ALU2 RV32I_ALU(.A(RV32I_EX_REG1), 
+						.B(RV32I_EX_ALUINPUT), 
+						.ALUControl(RV32I_EX_ALUOp),  
+						.Result(RV32I_EX_ALUResult), 
+						.compare(RV32I_EX_COMPARE));
+endmodule;

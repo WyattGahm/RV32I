@@ -1,0 +1,21 @@
+module RV32I_MEM(input CTRL_WB_IN, input CTRL_M_IN, input ALUIMM_IN, input COMPARE_IN, input ALURESULT_IN, input REG2_IN, input INST_IN, output CTRL_WB_OUT, output MEM_OUT, output ALURESULT_OUT, output INST_OUT, output PCIMM_OUT, output PCSRC_OUT);
+	//CTRL_MEM_IN = {Branch, MEMREAD,MEMWRITE}
+	wire IM_BRANCH;
+	DataMemory RV32I_DataMemory(	.addr(RV32I_ALU_Result), 
+											.data(RV32I_Reg_ReadData2), 
+											.MemRead(RV32I_Control_MemRead), 
+											.MemWrite(RV32I_Control_MemWrite), 
+											.out(RV32I_Mem_Data),
+											.extendMSB(RV32I_Control_extendMSB),
+											.loadType(RV32I_Control_loadType));
+	BranchLogic RV32I_BranchLogic(.lt(COMPARE_IN[2]), 
+											.eq(COMPARE_IN[1]), 
+											.gt(COMPARE_IN[0]),
+											.funct3(RV32I_Instruction[14:12]),
+											.choice(IM_BRANCH));
+	assign INST_OUT = INST_IN;
+	assign ALURESULT_OUT = ALURESULT_IN;
+	assign PCSRC_OUT = IM_BRANCH & CTRL_M_IN[2];
+	assign PCIMM_OUT = PCIMM_IN;
+	assign CTRL_WB_OUT = CTRL_WB_IN;
+endmodule
